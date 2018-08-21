@@ -10,11 +10,17 @@ import {Http} from '@angular/http';
 })
 export class ProfileComponent implements OnInit {
   profile: any [];
+  repos: any [];
   constructor(private profilesService: ProfilesService, private http: Http) {
     this.profilesService.getProfileInfo().subscribe(profile => {
     console.log(profile);
     this.profile = profile;
     });
+
+    this.profilesService.getProfileRepos().subscribe(repos => {
+      console.log(repos);
+      this.repos = repos;
+      });
   }
 
   ngOnInit() {

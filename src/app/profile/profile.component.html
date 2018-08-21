@@ -32,23 +32,38 @@
             </ul>
           </div>
         </div>
-        <div class = col-sm-4>
+        <div class = col-sm-5>
           <div class = "card">
-            <span class = "badge badge-primary">
-              Repositories
-              {{profile.public_repos}}
-            </span>
-            <span class = "badge badge-primary">
-                Followers
-                {{profile.public_followers}}
-            </span>
-            <span class = "badge badge-primary">
-                  Following
-                  {{profile.public_following}}
-            </span>
+            <p>
+              <span class = "badge badge-info">
+                Repositories
+                {{profile.public_repos}}
+              </span>
+              <span class = "badge badge-dark">
+                  Followers
+                  {{profile.public_followers}}
+              </span>
+              <span class = "badge badge-default">
+                    Following
+                    {{profile.public_following}}
+              </span>
+            </p>
+          </div>
+          <div class = "card" class = "col-sm-6">
+            <a href= "{{profile.html_url}}"  target = "blank" class = "btn btn-primary"> View on Github</a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class = card>
+    <h3 class = "card-header"> Repositories</h3>
+    <div class = "card-body" *ngFor = 'let repo of repos'>
+      <ul>
+       <li> {{repo.name}}</li>
+       <p>{{repo.description}}<p>
+        <a href = "{{repo.html_url}}" class = "btn btn-sm btn-primary">View Project on Github</a>
+      </ul>
     </div>
   </div>
 </div>

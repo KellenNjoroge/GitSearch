@@ -19,5 +19,11 @@ export class ProfilesService {
     map(res => res.json())
   );
   }
+  getProfileRepos(){
+    return this.http.get('https://api.github.com/users/'
+    + this.username + '/repos?client_id' + this.clientid + '&client_secret=' + this.clientsecret )
+    .pipe(
+    map(res => res.json())
+  );
+  }
 }
-// https://api.github.com/users/KellenNjoroge?access_token=ed1ef4560933cae249b21bf58136daf47b546069

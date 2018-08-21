@@ -1,3 +1,54 @@
-<p>
-  profile works!
-</p>
+<div *ngIf="profile">
+  <div class = "card">
+    <div class = "card-header">
+      {{profile.name}}
+      ({{profile.login}})
+      <span *ngIf="profile.company"> works at {{profile.company}}</span>
+      {{profile.location}}
+    </div>
+    <div class = "card-body">
+      <div class = "row">
+        <div class = "card">
+          <div class = "col-sm-3">
+            <img  class = "card-img-top"src= "{{profile.avatar_url}}" class = "img-thumbnail" class= "img-responsive" alt = "profile image">
+          </div>
+        </div>
+        <div class = "col-sm-5">
+          <div class = "card">
+            <ul class = "list-group-flush">
+                <li class = "list-group-item" *ngIf="profile.bio">
+                  {{profile.bio}}
+                </li>
+                <li class = "list-group-item" *ngIf="profile.hireable">
+                  Available for hire:
+                    {{profile.hireable}}
+                </li>
+                <li class = "list-group-item" *ngIf="profile.blog">
+                    <a href = "{{profile.blog}}" target = "blank">{{profile.blog}}</a>
+                </li>
+                <li class = "list-group-item" *ngIf="profile.email">
+                        {{profile.email}}
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class = col-sm-4>
+          <div class = "card">
+            <span class = "badge badge-primary">
+              Repositories
+              {{profile.public_repos}}
+            </span>
+            <span class = "badge badge-primary">
+                Followers
+                {{profile.public_followers}}
+            </span>
+            <span class = "badge badge-primary">
+                  Following
+                  {{profile.public_following}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

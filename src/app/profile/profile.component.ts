@@ -9,10 +9,11 @@ import {Http} from '@angular/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  profile: any [];
   constructor(private profilesService: ProfilesService, private http: Http) {
     this.profilesService.getProfileInfo().subscribe(profile => {
     console.log(profile);
+    this.profile = profile;
     });
   }
 

@@ -13,7 +13,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 // Defining routes
 const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
-  {path: 'search', component: SearchComponent}
+  {path: 'search', component: SearchComponent},
+  {path: '', redirectTo: '/profile', pathMatch: 'full'},
+  {path: '**', component: NotFoundComponent}
 ];
 
 

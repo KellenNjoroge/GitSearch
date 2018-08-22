@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProfilesService} from '../profile-service/profiles.service';
 import {Http} from '@angular/http';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',

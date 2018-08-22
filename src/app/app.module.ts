@@ -6,7 +6,6 @@ import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {ProfilesService} from './profile-service/profiles.service';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
-import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -24,7 +23,6 @@ const routes: Routes = [
     AppComponent,
     ProfileComponent,
     ProfileFormComponent,
-    AboutComponent,
     SearchComponent,
     NotFoundComponent
   ],
